@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мои курсы — Ксения</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Иконки Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Базовые стили */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdfbf7; /* Кремовый фон */
+            color: #333; /* Чёрный текст */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        button {
+            cursor: pointer;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        /* Шапка и навигация */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        nav h1 {
+            font-size: 1.5rem;
+            color: #0a2d5b; /* Тёмно-синий заголовок */
+        }
+
+        /* Основной контент */
+        main {
+            max-width: 1200px;
+            margin: 120px auto 40px; /* Отступ сверху из-за фиксированной шапки */
+            padding: 0 20px;
+        }
+        section {
+            margin-bottom: 60px;
+            padding: 40px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Стили для курсов */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+             background-color: #fffaf0;
+             padding: 25px;
+             border-radius: 12px;
+             text-align: center;
+             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+             transition: transform 0.3s ease, box-shadow 0.3s ease;
+         }
+
+         .course-card:hover {
+             transform: translateY(-8px);
+             box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+         }
+
+         .course-card h3 {
+             color: #0a2d5b;
+             margin-bottom: 15px;
+         }
+
+         .course-card p {
+              font-size: 1.05rem;
+              color: #444;
+          }
+
+          /* Кнопка "Назад" (ИСПРАВЛЕНО) */
+          .btn-back {
+              background-color: #e0e0e0; /* Светло-серая кнопка */
+              color: #333 !important;
+              display: inline-block;
+              margin-bottom: 40px; /* Отступ сверху от контента */
+          }
+          .btn-back a { /* Убираем подчёркивание у ссылки внутри кнопки */
+              color: inherit !important;
+          }
+          .btn-back:hover {
+              opacity: 0.9;
+              background-color: #d0d0d0;
+          }
+
+         /* Адаптивность */
+         @media (max-width: 768px) {
+             nav {
+                 flex-direction: column;
+                 align-items: flex-start;
+             }
+             nav h1 {
+                 margin-bottom: 15px;
+             }
+         }
+    </style>
+</head>
+<body>
+
+    <!-- Фиксированная шапка -->
+    <header>
+        <nav>
+           <h1>Ксения</h1>
+       </nav>
+   </header>
+
+   <!-- Главный контент -->
+   <main>
+       <!-- Секция "Мои курсы" -->
+       <section>
+           <button class="btn-back"><a href="index.html"><i class="fas fa-arrow-left"></i> Назад на главную</a></button>
+           <h2>Мои курсы</h2>
+           <div class="courses-grid">
+               <!-- Карточка курса "Роспись одежды" -->
+               <div class="course-card">
+                   <h3>Роспись одежды</h3>
+                   <p>Превратите обычную вещь в произведение искусства. На курсе вы научитесь работать с акриловыми красками по ткани, создавать уникальные принты и закреплять рисунок так, чтобы он служил долго.</p>
+               </div>
+
+               <!-- Карточка курса "Роспись пряников" -->
+               <div class="course-card">
+                   <h3>Роспись пряников</h3>
+                   <p>Освойте искусство создания красивых и вкусных подарков. Мы научим вас готовить правильную глазурь, работать с кондитерскими мешками и создавать детализированные узоры на имбирных пряниках.</p>
+               </div>
+
+               <!-- Карточка курса "Скульптуры из бетона" -->
+               <div class="course-card">
+                   <h3>Скульптуры из бетона</h3>
+                   <p>Современный и стильный вид творчества. На этом курсе вы создадите собственную интерьерную скульптуру или кашпо, изучив техники литья, шлифовки и тонирования бетона.</p>
+               </div>
+           </div>
+       </section>
+   </main>
+
+</body>
+</html>

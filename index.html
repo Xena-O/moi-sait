@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ксения — Художник и дизайнер</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Иконки Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Базовые стили */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdfbf7; /* Кремовый фон */
+            color: #333; /* Чёрный текст */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        button {
+            cursor: pointer;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        /* Шапка и навигация */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        nav h1 {
+            font-size: 1.5rem;
+            color: #0a2d5b; /* Тёмно-синий заголовок */
+        }
+
+        /* Основной контент */
+        main {
+            max-width: 1200px;
+            margin: 120px auto 40px; /* Отступ сверху из-за фиксированной шапки */
+            padding: 0 20px;
+        }
+        section {
+            margin-bottom: 60px;
+            padding: 40px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Раздел "Обо мне" */
+        .about-me {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+         /* --- СТИЛИ ДЛЯ ФОТОГРАФИИ --- */
+         .about-me img {
+             width: 200px; /* Фиксированная ширина */
+             height: auto; /* Сохраняем пропорции */
+             border-radius: 50%; /* Делаем фото круглым */
+             object-fit: cover; /* Обрезаем лишнее, чтобы фото заполнило круг */
+             margin-left: auto; /* Выравниваем фото по правому краю (в правой колонке) */
+             background-color: transparent; /* Убираем серый фон заглушки */
+             display: block; /* Убираем выравнивание по центру заглушки */
+         }
+
+         /* НОВЫЕ СТИЛИ ДЛЯ БЛОКА "МОИ УМЕНИЯ" */
+         .services-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+             gap: 30px; /* Увеличенный отступ между карточками */
+         }
+         .service-card {
+             background-color: #fffaf0;
+             padding: 30px; /* Больше внутреннего пространства */
+             border-radius: 12px;
+             text-align: center;
+             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+             transition: transform 0.3s ease, box-shadow 0.3s ease;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+         }
+         .service-card i {
+             font-size: 2.8rem; /* Увеличенная иконка */
+             color: #0a2d5b;
+             margin-bottom: 15px;
+         }
+         .service-card h3 {
+             color: #0a2d5b;
+             margin-bottom: 15px;
+         }
+         .service-card p {
+              font-size: 1rem;
+              color: #444;
+              text-align: center;
+          }
+          .service-card:hover {
+              transform: translateY(-8px);
+              box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+          }
+
+         /* Кнопки для курсов и картин (добавлены) */
+         .btn-portfolio {
+             background-color: #e0e0e0; /* Светло-серая кнопка для контраста */
+             color: #333 !important;
+             display: inline-block;
+             margin-top: 25px; /* Отступ от предыдущего блока */
+         }
+         .btn-portfolio a { color: inherit !important; }
+         .btn-portfolio:hover { opacity: 0.9; background-color: #d0d0d0; }
+
+         /* Адаптивность */
+         @media (max-width: 768px) {
+             .about-me {
+                 grid-template-columns: 1fr;
+                 text-align: center;
+             }
+             .about-me img {
+                 margin-left: auto;
+                 margin-right: auto;
+                 display: block;
+                 width: 80%; /* Уменьшаем фото на мобайле */
+                 max-width: 250px;
+             }
+         }
+    </style>
+</head>
+<body>
+
+    <!-- Фиксированная шапка -->
+    <header>
+        <nav>
+           <h1>Ксения</h1>
+       </nav>
+   </header>
+
+   <!-- Главный контент -->
+   <main>
+       <!-- Секция "Обо мне" -->
+       <section class="about-me">
+           <div class="about-info">
+               <h2>Художник, дизайнер</h2>
+               <p>Пишу картины на заказ, продаю готовые картины и принты. Создаю различный дизайн на заказ.</p>
+               <button class="btn-primary">Написать мне</button>
+               <!-- НОВЫЕ КНОПКИ-ССЫЛКИ -->
+               <a href="courses.html"><button class="btn-portfolio">Мои курсы</button></a>
+               <a href="pictures.html"><button class="btn-portfolio">Мои картины</button></a>
+           </div>
+           <img src="foto.jpg" alt="Моё фото">
+       </section>
+
+       <!-- Секция "Мои умения" (ОБНОВЛЕНА) -->
+       <section id="services">
+           <h2>Мои умения</h2>
+           <div class="services-grid">
+               <!-- Карточка услуги -->
+               <div class="service-card">
+                   <i class="fas fa-paint-brush"></i>
+                   <h3>Картины на заказ</h3>
+                   <p>Создам уникальную картину по вашему заказу, которая идеально впишется в ваш интерьер.</p>
+               </div>
+               <!-- Карточка услуги -->
+               <div class="service-card">
+                   <i class="fas fa-id-card"></i>
+                   <h3>Дизайн полиграфии</h3>
+                   <p>Разработка макетов для визиток, буклетов, листовок и другой печатной продукции.</p>
+               </div>
+               <!-- Карточка услуги -->
+               <div class="service-card">
+                   <i class="fas fa-mouse-pointer"></i>
+                   <h3>Диджитал-дизайн</h3>
+                   <p>Создание графики для веб-сайтов, социальных сетей и мобильных приложений.</p>
+               </div>
+               <!-- Карточка услуги -->
+               <div class="service-card">
+                   <i class="fas fa-gem"></i>
+                   <h3>Брендинг</h3>
+                   <p>Разработка фирменного стиля и логотипов, которые выделят ваш бизнес.</p>
+               </div>
+           </div>
+       </section>
+
+       <!-- Секция "Контакты" -->
+       <section class="contacts">
+           <h2>Контакты</h2>
+           <p>Телефон: [+79999999999] <a href="tel:+79999999999"><i class="fas fa-phone contact-icon"></i></a></p>
+           <p>Telegram: <a href="https://t.me/@username" target="_blank">@username</a> <a href="https://t.me/@username" target="_blank"><i class="fab fa-telegram contact-icon"></i></a></p>
+       </section>
+   </main>
+
+</body>
+</html>
